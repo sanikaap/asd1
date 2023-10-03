@@ -1,6 +1,6 @@
 from tensorflow.keras.applications.resnet50 import ResNet50, preprocess_input
 from tensorflow.keras.preprocessing.image import ImageDataGenerator
-from tensorflow.keras.layers import Dense, Activation, Flatten, Dropout
+from tensorflow.keras.layers import Dense, Flatten, Dropout
 from tensorflow.keras.models import Sequential, Model
 
 HEIGHT = 300
@@ -72,6 +72,27 @@ history = finetune_model.fit_generator(train_generator, epochs=NUM_EPOCHS, worke
                                        shuffle=True, callbacks=callbacks_list)
 
 
+# Define the plot_training function
+def plot_training(history):
+    acc = history.history['acc']
+    val_acc = history.history['val_acc']
+    loss = history.history['loss']
+    val_loss = history.history['val_loss']
+    epochs = range(len(acc))
+
+    plt.plot(epochs, acc, 'r.')
+    plt.plot(epochs, val_acc, 'r')
+    plt.title('Training and validation accuracy')
+
+    # plt.figure()
+    # plt.plot(epochs, loss, 'r.')
+    # plt.plot(epochs, val_loss, 'r-')
+    # plt.title('Training and validation loss')
+    plt.show()
+
+    plt.savefig('acc_vs_epochs.png')
+
+# Call the plot_training function
 plot_training(history)
 
 # Plot the training and validation loss + accuracy

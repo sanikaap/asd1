@@ -5,6 +5,8 @@ import matplotlib.gridspec as gridspec
 import time
 import numpy as np
 
+from hashlib import md5
+
 def file_hash(filepath):
     with open(filepath, 'rb') as f:
         return md5(f.read()).hexdigest()
@@ -12,7 +14,7 @@ def file_hash(filepath):
 import os
 os.getcwd()
 
-os.chdir('D:/Kaggle-Autism/cleanData/images/Non_Autistic')
+os.chdir('C:\Users\USER\OneDrive\Desktop\ASD\Kaggle-Autism\cleanData\images\Non_Autistic')
 os.getcwd()
 
 file_list = os.listdir()
