@@ -1,6 +1,6 @@
 import tempfile
 
-# extract and plot each detected face in a photograph
+#extract and plot each detected face in a photograph
 from matplotlib import pyplot
 from matplotlib.patches import Rectangle
 from matplotlib.patches import Circle

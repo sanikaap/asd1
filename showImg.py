@@ -1,3 +1,4 @@
+#plot graph
 from matplotlib import pyplot as plt
 import matplotlib.image as mpimg
 import matplotlib.gridspec as gridspec
